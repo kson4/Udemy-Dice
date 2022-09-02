@@ -10,9 +10,11 @@ function displayDice() {
     if (diceRoll1 > diceRoll2) {
         return 1;
     }
-        
-    else {
+    else if (diceRoll1 < diceRoll2) {
         return 2;
+    }    
+    else {
+        return 0;
     }
         
 }
@@ -20,8 +22,10 @@ function displayDice() {
 function displayWinner(winner) {
     if (winner == 1)
         document.querySelector("h1").innerHTML = "<i class=\"fa-solid fa-flag\"></i> Player 1 Wins!";
-    else
+    else if (winner == 2)
         document.querySelector("h1").innerHTML = "Player 2 Wins! <i class=\"fa-solid fa-flag\"></i>";
+    else
+    document.querySelector("h1").innerHTML = "DRAW!"
 }
 
 winner = displayDice();
